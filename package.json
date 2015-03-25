@@ -1,10 +1,10 @@
 {
-  "name": "voxel-engine",
-  "description": "make games with voxel.js",
+  "name": "voxel-engine-stackgl",
+  "description": "make games with voxel.js and stackgl",
   "version": "0.20.1",
   "repository": {
     "type": "git",
-    "url": "git@github.com:maxogden/voxel-engine.git"
+    "url": "git@github.com:deathcap/voxel-engine-stackgl.git"
   },
   "contributors": [
     "Max Ogden <max@maxogden.com> (https://github.com/maxogden)",

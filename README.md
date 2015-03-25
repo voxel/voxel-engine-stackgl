@@ -1,6 +1,14 @@
-# voxel-engine
+# voxel-engine-stackgl
 
-## A voxel engine in javascript using three.js
+## A voxel engine in javascript using stackgl
+
+**An experimental port of [voxel-engine](https://github.com/maxogden/voxel-engine) replacing [three.js](http://threejs.org) with [stackgl](http://stack.gl)**
+
+**Caution: not all of the functionality of the three.js-based voxel-engine is implemented,
+documentation may be outdated, and the API may be unstable. Pull requests to improve this
+situation are greatly welcomed.**
+
+---
 
 Learn more at http://voxeljs.com
 
