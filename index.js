@@ -195,7 +195,7 @@ function Game(opts) {
 inherits(Game, EventEmitter)
 
 Game.prototype.toString = function() {
-  return 'voxel-engine'
+  return 'voxel-engine-stackgl'
 }
 
 // # External API
@@ -661,11 +661,11 @@ Game.prototype.showChunk = function(chunk, optionalPosition) {
 // # Debugging methods
 
 Game.prototype.addMarker = function(position) {
-  throw new Error('voxel-engine addMarker not yet implemented TODO: figure out how to fit this into the rendering pipeline')
+  throw new Error('voxel-engine-stackgl addMarker not yet implemented TODO: figure out how to fit this into the rendering pipeline')
 }
 
 Game.prototype.addAABBMarker = function(aabb, color) {
-  throw new Error('voxel-engine addAABBMarker not yet implemented TODO')
+  throw new Error('voxel-engine-stackgl addAABBMarker not yet implemented TODO')
 }
 
 Game.prototype.addVoxelMarker = function(x, y, z, color) {
