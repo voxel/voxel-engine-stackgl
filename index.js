@@ -109,7 +109,9 @@ function Game(opts) {
   }
 
   // setup plugins
-  var plugins = createPlugins(this, {require: function(name) {
+  var plugins = createPlugins(this, {
+    masterPluginName: 'voxel-engine-stackgl',
+    require: function(name) {
     // we provide the built-in plugins ourselves; otherwise check caller's require, if any
     // TODO: allow caller to override built-ins? better way to do this?
     if (name in BUILTIN_PLUGIN_OPTS) {
