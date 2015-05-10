@@ -33,12 +33,13 @@ See the [CONTRIBUTING.md](contributing.md) file for more details.
 
 ### contributors
 
-multiplex is only possible due to the excellent work of the following contributors:
+voxel-engine-stackgl is only possible due to the excellent work of the following contributors:
 
 <table><tbody>
 <tr><th align="left">Max Ogden</th><td><a href="https://github.com/maxogden">GitHub/maxogden</a></td><td><a href="http://twitter.com/maxogden">Twitter/@maxogden</a></td></tr>
 <tr><th align="left">Kumavis</th><td><a href="https://github.com/kumavis/">GitHub/kumavis</a></td><td></td></tr>
 <tr><th align="left">Deathcap</th><td><a href="https://github.com/deathcap/">GitHub/deathcap</a></td><td></td></tr>
+<tr><th align="left">Mikola Lysenko</th><td><a href="https://github.com/mikolalysenko">GitHub/mikolalysenko</a></td><td></td></tr>
 </tbody></table>
 
 # API
