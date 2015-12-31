@@ -98,6 +98,7 @@ function Game(opts) {
       (this.skyColor & 0xff) / 255.0,
       1.0]
     shellOpts.pointerLock = opts.pointerLock !== undefined ? opts.pointerLock : true
+    shellOpts.stickyPointerLock = opts.stickyPointerLock !== undefined ? opts.stickyPointerLock : shellOpts.pointerLock
     shellOpts.element = this.createContainer(opts)
     var shell = createShell(shellOpts)
   
