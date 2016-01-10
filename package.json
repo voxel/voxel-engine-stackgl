@@ -20,7 +20,7 @@
     "game-shell-fps-camera": "^0.7.0",
     "voxel-stitch": "^0.10.0",
     "voxel-registry": "^0.8.1",
-    "voxel-plugins": "^0.3.2",
+    "voxel-plugins": "^0.5.0",
     "voxel": "^0.5.0",
     "voxel-raycast": "^0.2.1",
     "voxel-controls": "^0.1.0",

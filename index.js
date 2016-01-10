@@ -19,11 +19,6 @@ var obsolete = require('obsolete')
 
 var createPlugins = require('voxel-plugins')
 var extend = require('extend')
-require('voxel-registry')
-require('voxel-stitch')
-require('voxel-shader')
-require('voxel-mesher')
-require('game-shell-fps-camera')
 
 module.exports = Game
 
@@ -111,17 +106,20 @@ function Game(opts) {
   }
 
   // setup plugins
+  var pluginLoaders = opts.pluginLoaders || {};
+  extend(pluginLoaders, {
+    'voxel-engine-stackgl': require('./'),
+    'voxel-registry': require('voxel-registry'),
+    'voxel-stitch': require('voxel-stitch'),
+    'voxel-shader': require('voxel-shader'),
+    'voxel-mesher': require('voxel-mesher'),
+    'game-shell-fps-camera': require('game-shell-fps-camera')
+  })
   var plugins = createPlugins(this, {
     masterPluginName: 'voxel-engine-stackgl',
-    require: function(name) {
-    // we provide the built-in plugins ourselves; otherwise check caller's require, if any
-    // TODO: allow caller to override built-ins? better way to do this?
-    if (name in BUILTIN_PLUGIN_OPTS) {
-      return require(name)
-    } else {
-      return opts.require ? opts.require(name) : require(name)
-    }
-  }})
+    loaders: pluginLoaders,
+    require: opts.require // optional (opts.pluginLoaders favored instead)
+  })
 
   this.collideVoxels = collisions(
     this.getBlock.bind(this),
