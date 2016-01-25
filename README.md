@@ -25,7 +25,7 @@ var game = createGame()
 
 ### contributing
 
-voxel-engine is an **OPEN Open Source Project**. This means that:
+voxel-engine-stackgl is an **OPEN Open Source Project**. This means that:
 
 > Individuals making significant and valuable contributions are given commit-access to the project to contribute as they see fit. This project is more like an open wiki than a standard guarded open source project.
 
@@ -44,27 +44,61 @@ voxel-engine-stackgl is only possible due to the excellent work of the following
 
 # API
 
-## require('voxel-engine')(options)
+## require('voxel-engine-stackgl')(options)
 
 Returns a new game instance. `options` defaults to:
 
 ```javascript
 {
-  texturePath: './textures/',
+  pluginLoaders: {
+    'voxel-engine-stackgl': require('voxel-engine-stackgl'),
+    'voxel-registry': require('voxel-registry'),
+    'voxel-stitch': require('voxel-stitch'),
+    'voxel-shader': require('voxel-shader'),
+    'voxel-mesher': require('voxel-mesher'),
+    'game-shell-fps-camera': require('game-shell-fps-camera')
+  },
+  pluginOpts: {},
+  keybindings: {
+    'W': 'forward',
+    'A': 'left',
+    'S': 'backward',
+    'D': 'right',
+    '<up>': 'forward',
+    '<left>': 'left',
+    '<down>': 'backward',
+    '<right>': 'right',
+    '<mouse 1>': 'fire',
+    '<mouse 3>': 'firealt',
+    '<space>': 'jump',
+    '<shift>': 'crouch',
+    '<control>': 'alt',
+    '<tab>': 'sprint'
+  },
+  isClient: process.browser,
   generate: function(x,y,z) {
     return x*x+y*y+z*z <= 15*15 ? 1 : 0 // sphere world
   },
-  materials: [['grass', 'dirt', 'grass_dirt'], 'brick', 'dirt'],
-  materialFlatColor: false,
+  generateVoxelChunk: function() {
+    return require('voxel').generate(low, high, self.generate, self)
+  },
+  arrayType: Uint8Array,
+  skyColor: 0xBFD1E5,
   chunkSize: 32,
+  chunkPad: 4,
   chunkDistance: 2,
+  removeDistance: 3,
   worldOrigin: [0, 0, 0],
-  controls: { discreteFire: false },
-  lightsDisabled: false,
-  fogDisabled: false,
+  startingPosition: [35, 1024, 35],
+  controls: {},
   generateChunks: true,
-  mesher: voxel.meshers.culled,
-  playerHeight: 1.62
+  asyncChunkGeneration: true,
+  meshType: 'surfaceMesh',
+  playerHeight: 1.62,
+  pointerLock: true,
+  stickyPointerLock: true,
+  tickFPS: 16,
+  exposeGlobal: false
 }
 ```
 
