@@ -42,5 +42,6 @@
   },
   "scripts": {
     "test": "node test.js"
-  }
+  },
+  "license": "BSD-3-Clause"
 }
