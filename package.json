@@ -31,14 +31,14 @@
     "gl-vec3": "^1.0.3",
     "spatial-events": "^1.1.0",
     "spatial-trigger": "^0.0.0",
-    "collide-3d-tilemap": "^0.0.1",
-    "tic": "^0.2.1",
-    "isndarray": "^0.1.0",
+    "collide-3d-tilemap": "^1.0.0",
+    "tic": "^1.0.0",
+    "isndarray": "^1.0.0",
     "obsolete": "^0.1.0",
-    "extend": "^1.2.1"
+    "extend": "^3.0.0"
   },
   "devDependencies": {
-    "tape": "^2.13.2"
+    "tape": "^4.4.0"
   },
   "scripts": {
     "test": "node test.js"
